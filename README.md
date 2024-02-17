@@ -12,32 +12,32 @@ Welcome to my C Programming repository! This repository is dedicated to helping 
 
 1. Introduction
 
-- Brief overview of what C programming is and its importance.
+Brief overview of what C programming is and its importance.
 
 2. Getting Started
 
-- Installation instructions for setting up a C development environment on various operating systems.
-- Basics of compiling and running C programs.
+Installation instructions for setting up a C development environment on various operating systems.
+Basics of compiling and running C programs.
 
 3. Topics Covered
 
-- List of topics covered in this repository, such as variables, data types, control structures, functions, arrays, pointers, and more.
+List of topics covered in this repository, such as variables, data types, control structures, functions, arrays, pointers, and more.
 
 4. Code Examples
 
-- Collection of well-commented code examples demonstrating various concepts in C programming.
+Collection of well-commented code examples demonstrating various concepts in C programming.
 
 5. Exercises
 
-- Set of exercises to practice and reinforce your understanding of C programming concepts.
+Set of exercises to practice and reinforce your understanding of C programming concepts.
 
 6. Contributing
 
-- Guidelines for contributing to this repository, whether it's reporting issues, suggesting improvements, or adding new content.
+Guidelines for contributing to this repository, whether it's reporting issues, suggesting improvements, or adding new content.
 
 7. Resources
 
-- Additional resources, such as books, websites, and tutorials, to further enhance your learning journey in C programming.
+Additional resources, such as books, websites, and tutorials, to further enhance your learning journey in C programming.
 
 ### How to Use This Repository
 
