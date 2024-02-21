@@ -10,38 +10,6 @@ Welcome to my C Programming repository! This repository is dedicated to helping 
 
 ## Contents
 
-### Brief overview of what C programming is and its importance.
-
-#### Features of C
-
-- C is a procedural programming unlike python which is OOP
-- C is a middle level language and it is less abstract than python since we can access memory through pointers, bit manipulation using bitwise operators due to these unique features of C, C became a popular choice for developing both system level applications like kernels, device drivers, operating systems etc.
-
-#### First program
-
-**For Windows**
-
-Open Notepad/Notepad++ or in CMD terminal write
-
-- `mkdir MyCPrograms`
-- `cd MyCPrograms`
-- `notepad hello.c`
-- `notepad hello.c` - This will open the Notepad editor. Write a simple "Hello, World!" program in the file hello.c then Save the file and close Notepad.
-- `gcc hello.c -o hello`
-
-**For linux**
-
-In your terminal, write
-
-- `mkdir MyCPrograms`
-- `cd MyCPrograms`
-- `gedit filename.c`
-  After writing the code in the text editor, use ctrl + z to exit gedit.
-- `nano hello.c`
-  Save and Close the File.To save the file in nano, press Ctrl+O, then press Enter to confirm. To exit, press Ctrl+X.
-- `gcc hello.c -o hello`
-- `./hello`
-
 ### Installation instructions for setting up a C development environment on various operating systems. Basics of compiling and running C programs.
 
 **Installing GCC Compiler:**
@@ -109,6 +77,260 @@ This README provides step-by-step instructions to install the GCC compiler on bo
 
 - Additional resources, such as books, websites, and tutorials, to further enhance your learning journey in C programming.
 
+### Brief overview of what C programming is and its importance.
+
+#### Features of C
+
+- C is a procedural programming unlike python which is OOP
+- C is a middle level language and it is less abstract than python since we can access memory through pointers, bit manipulation using bitwise operators due to these unique features of C, C became a popular choice for developing both system level applications like kernels, device drivers, operating systems etc.
+
+#### First program
+
+**For Windows**
+
+Open Notepad/Notepad++ or in CMD terminal write
+
+- `mkdir MyCPrograms`
+- `cd MyCPrograms`
+- `notepad hello.c`
+- `notepad hello.c` - This will open the Notepad editor. Write a simple "Hello, World!" program in the file hello.c then Save the file and close Notepad.
+- `gcc hello.c -o hello`
+
+**For linux**
+
+In your terminal, write
+
+- `mkdir MyCPrograms`
+- `cd MyCPrograms`
+- `gedit filename.c`
+  After writing the code in the text editor, use ctrl + z to exit gedit.
+- `nano hello.c`
+  Save and Close the File.To save the file in nano, press Ctrl+O, then press Enter to confirm. To exit, press Ctrl+X.
+- `gcc hello.c -o hello`
+- `./hello`
+
+```c
+# include <stdio.h>
+int main() {
+	printf("Hello world");
+	printf("test");
+	return 0;
+}
+
+```
+
+💡 Here because we are first time we are executing the code therefore Build and Run both are required. Build actually asks the compiler to build the machine code for the source code we had written. And Run simply runs the code and produce the output.
+
+### Explore the contents.
+
+**Size of data types**
+
+```c
+#include <stdio.h>
+int main()
+{
+	printf("Size of short int is %ld bytes\n", sizeof(short int));//2
+	printf("Size of int is %ld bytes\n", sizeof(int));//4
+	printf("Size of long int is %ld bytes\n", sizeof(long int));
+	printf("Size of float is %ld bytes\n", sizeof(float));
+	printf("Size of double is %ld bytes\n", sizeof(double));
+	printf("Size of long double is %ld bytes\n", sizeof(long double));
+	printf("Size of char is %ld bytes\n", sizeof(char));
+	return 0;
+}
+```
+
+`%ld` is the placeholder for this variable that simply says take the next argument from the `printf`
+
+**Fundamental Data Types − Integer**
+
+Range of 4 bit data?
+
+- 0000 to 1111 → 0 to 15
+- Formula: 0 to 2^n - 1
+
+Therefore, for 4 byte integer:
+
+- `4 * 8 = 32 bits`
+- Unsigned range 0 to 2^{n} - 1$
+- Signed integer also accommodate `-ve` integers, hence range (2^{n-1}) to +(2^{n-1} - 1)
+
+```c
+#include <stdio.h>
+#include <limits.h>
+#include <float.h>
+
+int main()
+{
+    // Integral types
+    printf("Range of short int: %d to %d\n", SHRT_MIN, SHRT_MAX);
+    printf("Range of short unsigned integer is from %d to %d\n", 0, USHRT_MAX);
+
+    printf("Range of int: %d to %d\n", INT_MIN, INT_MAX);
+    printf("Range of unsigned integer is from %u to %u\n", 0, UINT_MAX);
+
+
+    printf("Range of long int: %ld to %ld\n", LONG_MIN, LONG_MAX);
+    printf("Range of unsigned long int: %u to %lu\n", 0, ULONG_MAX);
+    // Char type
+    printf("Range of char: %d to %d\n", CHAR_MIN, CHAR_MAX);
+
+    // Precision of Floating-point types
+
+    printf("Precision of float: %d digits\n", FLT_DIG);
+    printf("Precision of double: %d digits\n", DBL_DIG);
+    printf("Precision of long double: %d digits\n", LDBL_DIG);
+
+    return 0;
+}
+```
+
+💡 <float.h> was used to access FLT_DIG, DBL_DIG and LDBL_DIG precision, similarly <limits.h> was used for the range of data types
+
+`2^32 - 1 = 4294967295`
+
+```c
+#include <stdio.h>
+int main()
+{
+	unsigned int var = 4294967296;
+	printf("%u\n", var);
+}
+```
+
+What happens when we write an integer value that is outside the range of the data type?
+
+💡 If we write 4294967296 then it starts from 0 again because we cannot represent 4294967296 in 32 bit system.
+
+![Untitled](https://github.com/Injamulhasan/Learn_c/assets/102874510/97ec8c2c-048d-4d9a-9a5a-c24a9d66fc7a)
+
+![Untitled (1)](https://github.com/Injamulhasan/Learn_c/assets/102874510/c26667cc-7b6a-4a45-9194-2610bae495ba)
+
+Suppose in this example when we try to write 9 in a 3 bit system, the 9 cannot be written since we need 4 bits to represent it. The MSB is ignored, hence 1000 becomes 000 and we see 0 being given as output.
+Characters
+
+```c
+#include <stdio.h>
+int main()
+{
+	char var = 65;
+	printf("%c", var);
+	return 0;
+}
+```
+
+Float, Double and Long Double
+
+```c
+#include <stdio.h>
+int main()
+{
+    float var1 = 3.1415926535897932;
+    double var2 = 3.1415926535897932;
+    long double var3 = 3.141592653589793213456;
+
+    printf("%.16f\n", var1);
+    printf("%.16f\n", var2);
+    printf("%.21Lf\n", var3);
+}
+```
+
+Which data type has the best precision?
+
+C Type Conversion
+
+```c
+#include <stdio.h>
+
+int main() {
+
+  int number = 34.78;
+  printf("%d", number);
+
+  return 0;
+}
+```
+
+// Output: 34
+​
+Implicit Type Conversion In C
+
+```c
+#include<stdio.h>
+
+int main() {
+
+  // create a double variable
+  double value = 4150.12;
+  printf("Double Value: %.2lf\n", value);
+
+  // convert double value to integer
+  int number = value;
+  printf("Integer Value: %d", number);
+
+  return 0;
+}
+```
+
+````c
+#include<stdio.h>
+
+int main() {
+
+  // character variable
+  char alphabet = 'a';
+  printf("Character Value: %c\n", alphabet);
+
+  // assign character value to integer variable
+  int number = alphabet;
+  printf("Integer Value: %d", number);
+
+  return 0;
+}
+​```
+
+
+Explicit Type Conversion In C
+
+```c
+#include<stdio.h>
+
+int main() {
+
+  // create an integer variable
+  int number = 35;
+  printf("Integer Value: %d\n", number);
+
+  // explicit type conversion
+  double value = (double) number;
+  printf("Double Value: %.2lf", value);
+
+  return 0;
+}
+````
+
+```C
+#include<stdio.h>
+int main() {
+
+  // create an integer variable
+  int number = 97;
+  printf("Integer Value: %d\n", number);
+
+  // (char) converts number to character
+  char alphabet = (char) number;
+  printf("Character Value: %c", alphabet);
+
+  return 0;
+}
+```
+
+### Read through the explanations, study the code examples, and attempt the exercises provided.
+
+### Experiment with the code, make modifications, and observe the results to deepen your understanding.
+
+### Contribute back by reporting issues, suggesting improvements, or adding new content. If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Any improvements or suggestions are welcome.
+
 ### How to Use This Repository
 
 1. Clone the repository to your local machine.
@@ -116,11 +338,6 @@ This README provides step-by-step instructions to install the GCC compiler on bo
    ```bash
    git clone https://github.com/Injamulhasan/Learn_c.git
    ```
-
-2. Explore the contents based on your current level of understanding or the topics you're interested in.
-3. Read through the explanations, study the code examples, and attempt the exercises provided.
-4. Experiment with the code, make modifications, and observe the results to deepen your understanding.
-5. Contribute back by reporting issues, suggesting improvements, or adding new content. If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Any improvements or suggestions are welcome.
 
 ## Acknowledgments
 
