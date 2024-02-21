@@ -8,11 +8,96 @@
 
 Welcome to my C Programming repository! This repository is dedicated to helping you learn and master the fundamentals of C programming.
 
-### Contents
+## Contents
 
-- Brief overview of what C programming is and its importance.
+### Brief overview of what C programming is and its importance.
 
-- Installation instructions for setting up a C development environment on various operating systems. Basics of compiling and running C programs.
+#### Features of C
+
+- C is a procedural programming unlike python which is OOP
+- C is a middle level language and it is less abstract than python since we can access memory through pointers, bit manipulation using bitwise operators due to these unique features of C, C became a popular choice for developing both system level applications like kernels, device drivers, operating systems etc.
+
+#### First program
+
+**For Windows**
+
+Open Notepad/Notepad++ or in CMD terminal write
+
+- `mkdir MyCPrograms`
+- `cd MyCPrograms`
+- `notepad hello.c`
+- `notepad hello.c` - This will open the Notepad editor. Write a simple "Hello, World!" program in the file hello.c then Save the file and close Notepad.
+- `gcc hello.c -o hello`
+
+**For linux**
+
+In your terminal, write
+
+- `mkdir MyCPrograms`
+- `cd MyCPrograms`
+- `gedit filename.c`
+  After writing the code in the text editor, use ctrl + z to exit gedit.
+- `nano hello.c`
+  Save and Close the File.To save the file in nano, press Ctrl+O, then press Enter to confirm. To exit, press Ctrl+X.
+- `gcc hello.c -o hello`
+- `./hello`
+
+### Installation instructions for setting up a C development environment on various operating systems. Basics of compiling and running C programs.
+
+**Installing GCC Compiler:**
+
+This README provides step-by-step instructions to install the GCC compiler on both Linux and Windows operating systems.
+
+**Linux:**
+
+1. **Update Package Lists:**
+   Open a terminal window and update the package lists of your Linux distribution:
+
+   ```
+   sudo apt update
+   ```
+
+2. **Install GCC:**
+   Use the package manager to install GCC:
+
+   ```
+   sudo apt install gcc
+   ```
+
+3. **Verify Installation:**
+   Confirm that GCC is installed successfully by checking its version:
+   ```
+   gcc --version
+   ```
+
+**Windows:**
+
+1. **Install MinGW-W64:**
+   MinGW-W64 is a development environment for Windows. Download the installer from the MinGW-W64 website: https://sourceforge.net/projects/mingw-w64/
+2. **Run Installer:**
+   Execute the downloaded installer and follow the installation instructions. Choose your architecture (32-bit or 64-bit) and the desired components, including GCC.
+
+3. **Add MinGW-W64 to PATH:**
+   After installation, add the MinGW-W64 binaries directory to your system PATH. The default location is typically `C:\mingw-w64\bin`.
+
+4. **Verify Installation:**
+   Open Command Prompt and verify that GCC is installed by typing:
+   ```
+   gcc --version
+   ```
+
+**Troubleshooting:**
+
+- If encountering any issues during installation, refer to the documentation provided with your Linux distribution or MinGW-W64 installer.
+- Ensure that your system meets the minimum requirements for installing GCC.
+- In case of errors, search online forums and communities for solutions specific to your problem.
+
+**Additional Notes:**
+
+- GCC is a powerful compiler suite supporting various programming languages like C, C++, and Fortran.
+- Always ensure you have the necessary permissions to install software on your system.
+- Keep your compiler updated to benefit from the latest features and bug fixes.
+- Refer to the GCC documentation for advanced usage and customization options.
 
 - List of topics covered in this repository, such as variables, data types, control structures, functions, arrays, pointers, and more.
 
