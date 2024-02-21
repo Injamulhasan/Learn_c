@@ -14,7 +14,7 @@ Welcome to my C Programming repository! This repository is dedicated to helping 
 
 **Installing GCC Compiler:**
 
-This README provides step-by-step instructions to install the GCC compiler on both Linux and Windows operating systems.
+Step-by-step instructions to install the GCC compiler on both Linux and Windows operating systems.
 
 **Linux:**
 
