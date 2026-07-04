@@ -8,19 +8,19 @@ int main() {  //function
   scanf("%f %f",&n1 ,&n2);
 
   result = n1 + n2 ;
-  printf("%f + %f = %f\n", n1 ,n2 ,result);
+  printf("%.2f + %.2f = %.2f\n", n1 ,n2 ,result);
 
 
   result = n1 - n2 ;
-  printf("%f - %f = %f\n", n1 ,n2 ,result);
+  printf("%.2f - %.2f = %.2f\n", n1 ,n2 ,result);
 
 
   result = n1 * n2 ;
-  printf("%f * %f = %f\n", n1 ,n2 ,result);
+  printf("%.2f * %.2f = %.2f\n", n1 ,n2 ,result);
 
 
   result = n1 / n2 ;
-  printf("%f / %f = %f\n", n1 ,n2 ,result);
+  printf("%.2f / %.2f = %.2f\n", n1 ,n2 ,result);
 
   return 0;
 }
